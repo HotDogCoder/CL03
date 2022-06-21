@@ -1,0 +1,44 @@
+package com.cibertec.cl03;
+
+import java.net.URI;
+import java.net.URISyntaxException;
+
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.WebApplicationType;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.web.client.RestTemplate;
+
+import com.cibertec.dao.entity.User;
+
+@SpringBootApplication
+public class Cl03I201816522HospinalFloresJorgeAlbertoApplication implements CommandLineRunner {
+
+	public static void main(String[] args) {
+		SpringApplication application = new SpringApplication(Cl03I201816522HospinalFloresJorgeAlbertoApplication.class);
+		application.setWebApplicationType(WebApplicationType.NONE);
+		application.run(args);
+		
+	}
+
+	@Override
+	public void run(String... args) throws Exception {
+		getAll();
+		
+	}
+	
+	public void getAll() {
+		RestTemplate template = new RestTemplate();
+		String resultado = template.getForObject("http://localhost:8080/user", String.class);
+		System.out.println(resultado);
+	}
+	
+	public void post() throws Exception {
+		RestTemplate template = new RestTemplate();
+		URI uri = new URI("http://localhost:8080/user");
+		User user = new User();
+		String resultado = template.getForObject("http://localhost:8080/user", String.class);
+		System.out.println(resultado);
+	}
+
+}

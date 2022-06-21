@@ -1,0 +1,13 @@
+package com.cibertec.cl03;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class Cl03I201816522HospinalFloresJorgeAlbertoApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(Cl03I201816522HospinalFloresJorgeAlbertoApplication.class, args);
+	}
+
+}
